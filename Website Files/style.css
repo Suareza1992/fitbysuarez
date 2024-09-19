@@ -1,0 +1,250 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: 'Poppins', sans-serif;
+    text-transform: none;
+}
+
+body {
+    line-height: 1.5;
+    font-family: 'Poppins', sans-serif;
+    text-transform: none;
+}
+
+.nav-items:before,
+.nav-items:after {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+.hero-container {
+    max-width: 1170px;
+    margin: auto;
+}
+
+.empieza-button {
+    display: flex;                   /* Use flexbox for alignment */
+    justify-content: center;         /* Center horizontally */
+    align-items: center;             /* Center vertically */
+    width: 20%;                      /* Responsive width */
+    max-width: 200px;                /* Maximum width to prevent it from getting too big */
+    padding: 1em;                    /* Responsive padding */
+    margin: 20px auto;               /* Center the button and add some vertical spacing */
+    background: rgba(255, 255, 255, 0.5);
+    border-top: 0.5px solid rgba(255, 255, 255, 0.1);
+    border-bottom: 0.5px solid rgba(255, 255, 255, 0.1);
+    box-shadow: 0 15px 15px rgba(255, 255, 255, 0.3);
+    border-radius: 30px;
+    backdrop-filter: blur(15px);
+    overflow: hidden;
+    position: relative;
+    transition: 0.5s;
+}
+
+.empieza-button a {
+    text-decoration: none;
+    font-size: 1rem;                 /* Use relative units for font size */
+    font-weight: 500;
+    letter-spacing: 1px;
+    color: #000;
+    transition: 0.5s;
+}
+
+.empieza-button:hover a {
+    letter-spacing: 2px;
+}
+
+/* Adjusted pseudo-elements are invisible by default */
+.empieza-button::before,
+.empieza-button::after {
+    content: '';
+    position: absolute;
+    width: 30px;
+    height: 10px;
+    background: rgba(255, 0, 0, 0.1); /* reduced opacity for a lighter red */
+    border-radius: 10px;
+    transition: 0.5s;
+    opacity: 0; /* to make them invisible from the start */
+    pointer-events: none; /* Ensures they don't interfere with clicks */
+}
+
+.empieza-button::before {
+    top: -5px;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.empieza-button::after {
+    bottom: -8.5px;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+/* On hover, pseudo elements become visible and animate */ 
+.empieza-button:hover::before,
+.empieza-button:hover::after {
+    opacity: 1; /* Make them visible */
+}
+
+.empieza-button:hover::before {
+    top: 0;
+    width: 80%;
+    height: 50%;
+    border-radius: 30px;
+}
+
+.empieza-button:hover::after {
+    bottom: 0;
+    width: 80%;
+    height: 50%;
+    border-radius: 30px;
+}
+
+.empieza-button:nth-child(1)::before,
+.empieza-button:nth-child(1)::after {
+    background: rgba(255, 0, 0, 0.1); /* Lighter red */
+    box-shadow: none;
+}
+
+.row {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+ul {
+    list-style: none;
+}
+
+.footer {
+    background-color: #383838;
+    padding: 70px 0;
+}
+
+.footer-col {
+    width: 25%;
+    padding: 0 15px;
+}
+
+.footer-col h4 {
+    font-size: 20px;
+    color: #fff;
+    text-transform: none;
+    margin-bottom: 35px;
+    font-weight: 500;
+    position: relative;
+}
+
+.footer-col h4::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: -10px;
+    height: 2px;
+    width: 50px;
+    background-color: #f00; /* Added color for the underline */
+}
+
+.footer-col ul li:not(:last-child) {
+    margin-bottom: 10px;
+}
+
+.footer-col ul li a {
+    font-size: 15px;
+    color: #fff;
+    text-decoration: none;
+    font-weight: 300;
+    display: block;
+    transition: all 0.3s ease;
+}
+
+.footer-col ul li a:hover {
+    color: #fff;
+    padding-left: 10px;
+}
+
+.footer-col .social-links a {
+    display: inline-block;
+    height: 40px;
+    width: 40px;
+    background-color: rgba(255, 255, 255, 0.2);
+    margin: 0 10px 10px 0;
+    text-align: center;
+    line-height: 40px;
+    border-radius: 50%;
+    color: #fff;
+    transition: all 0.5s ease;
+}
+
+.footer-col .social-links a:hover {
+    color: #24262b;
+    background-color: #fff;
+}
+
+nav {
+    height: 80px;
+    background: #383838;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0rem calc((100vw - 1300px) / 2);
+}
+
+.logo {
+    color: #000;
+    font-size: 1.5rem;
+    font-weight: bold;
+    padding: 0 2rem;
+}
+
+nav a {
+    text-decoration: none;
+    color: white;
+    padding: 0 1.5rem;
+}
+
+.hero {
+    background: #383838;
+}
+
+.fondo {
+    background-image: url('FBS sin background negro.png');
+    height: 100vh;
+    background-repeat: no-repeat;
+    width: 100%;
+    background-size: cover;
+    background-position: center;
+}
+
+/* Remove duplicate universal selector */
+* {
+    margin: 0;
+    padding: 0;
+}
+
+/* Responsive adjustments */
+@media (max-width: 767px) {
+    .footer-col {
+        width: 50%;
+        margin-bottom: 30px;
+    }
+
+    /* Adjust button width for smaller screens */
+    .empieza-button {
+        width: 50%;
+    }
+}
+
+@media (max-width: 574px) {
+    .footer-col {
+        width: 100%;
+    }
+
+    /* Further adjust button width for very small screens */
+    .empieza-button {
+        width: 80%;
+    }
+}
