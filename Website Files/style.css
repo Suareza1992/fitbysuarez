@@ -8,10 +8,23 @@
     text-transform: none;
 }
 
+/* Ensure html and body take full height */
+html, body {
+    height: 100%;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+}
+
 body {
     line-height: 1.5;
     font-family: 'Poppins', sans-serif;
     text-transform: none;
+}
+
+/* Main content should grow to fill available space */
+main {
+    flex: 1;
 }
 
 .nav-items:before,
@@ -110,6 +123,42 @@ body {
     box-shadow: none;
 }
 
+/* ================== Blog Section Styles ================== */
+.blog {
+    padding: 2rem;
+}
+
+.blog h1 {
+    text-align: center;
+    margin-bottom: 2rem;
+}
+
+.blog-posts {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+.post {
+    padding: 1rem;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+}
+
+.post h2 a {
+    color: #333;
+    text-decoration: none;
+}
+
+.post h2 a:hover {
+    color: #007BFF;
+}
+
+.post .date {
+    font-size: 0.8rem;
+    color: #999;
+}
+
 .row {
     display: flex;
     flex-wrap: wrap;
@@ -119,9 +168,13 @@ ul {
     list-style: none;
 }
 
+/* Footer should stay at the bottom */
 .footer {
     background-color: #383838;
-    padding: 70px 0;
+    padding: 20px 0; /* Adjust padding as needed */
+    color: white;
+    text-align: center;
+    width: 100%.
 }
 
 .footer-col {
@@ -198,6 +251,12 @@ nav {
     font-size: 1.5rem;
     font-weight: bold;
     padding: 0 2rem;
+
+    /* Background image properties */
+    background-image: url(https://i.pinimg.com/originals/8c/cf/ed/8ccfedbe73ac15ea9f969e459588a311.jpg);
+    background-position: top left;
+    background-size: 100px 100px;
+    background-repeat: no-repeat;
 }
 
 nav a {
@@ -210,8 +269,9 @@ nav a {
     background: #383838;
 }
 
-.fondo {
+/* .fondo */ {
     background-image: url('FBS sin background negro.png');
+
     height: 100vh;
     background-repeat: no-repeat;
     width: 100%;
