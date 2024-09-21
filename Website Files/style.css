@@ -247,16 +247,14 @@ nav {
 }
 
 .logo {
-    color: #000;
-    font-size: 1.5rem;
-    font-weight: bold;
-    padding: 0 2rem;
+    display: flex; /* Aligns the image and text horizontally. */
+    align-items: center; /* Vertically centers the text and image. */
+}
 
-    /* Background image properties */
-    background-image: url(https://i.pinimg.com/originals/8c/cf/ed/8ccfedbe73ac15ea9f969e459588a311.jpg);
-    background-position: top left;
-    background-size: 100px 100px;
-    background-repeat: no-repeat;
+.logo img {
+    margin-right: 10px; /* Adds space between the image and the text. */
+    width: 50px; /* Adjusts the width of the logo image */
+    height: auto; /* Ensures the image mantains it's aspect ratio. */
 }
 
 nav a {
