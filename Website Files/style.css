@@ -175,6 +175,8 @@ ul {
     color: white;
     text-align: center;
     width: 100%;
+    position: relative; /* This keeps it within the flow of the document. */
+    bottom: 0; /* Sticks to the bottom. */
 }
 
 .footer-col {
@@ -282,13 +284,7 @@ nav a {
 }
 
 .fondo {
-    background-image: url("./Logos/herolandingFBS.png");
-
-    height: 100vh;
-    background-repeat: no-repeat;
-    width: 100%;
-    background-size: cover;
-    background-position: center;
+    background-image: url("herolandingFBS.png");
 }
 
 /* Remove duplicate universal selector */
