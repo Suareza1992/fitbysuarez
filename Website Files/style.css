@@ -282,7 +282,7 @@ nav a {
 }
 
 .fondo {
-    background-image: url('/Logos/herolandingFBS.png');
+    background-image: url("./Logos/herolandingFBS.png");
 
     height: 100vh;
     background-repeat: no-repeat;
