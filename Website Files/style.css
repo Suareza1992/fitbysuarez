@@ -164,6 +164,11 @@ main {
     box-shadow: none;
 }
 
+/* Further adjust button width for very small screens */
+.empieza-button {
+    width: 80%;
+}
+
 nav {
     position: fixed; /* makes the header stick to the top. */
     top: 0; /* Sticks to the top of the page. */
@@ -357,10 +362,5 @@ ul {
 @media (max-width: 574px) {
     .footer-col {
         width: 100%;
-    }
-
-    /* Further adjust button width for very small screens */
-    .empieza-button {
-        width: 80%;
     }
 }
