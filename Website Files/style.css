@@ -37,7 +37,7 @@ main {
     box-sizing: border-box;
 }
 
-/* hide the nav items by default on mobile. */
+/* Hide the nav items by default on mobile. */
 .nav-items {
     display: flex;
     gap: 1.5rem;
@@ -45,7 +45,7 @@ main {
 
 @media (max-width: 768px) {
     .nav-items {
-        display:none; /* Hide the nav items. */
+        display: none; /* Hide the nav items. */
         flex-direction: column; /* Stack the nav items vertically. */
         position: absolute;
         top: 80px; /* Below the navbar. */
@@ -60,6 +60,7 @@ main {
         display: block;
         font-size: 30px;
         cursor: pointer;
+        color: white; /* Ensures the icon is visible. */
     }
 }
 
