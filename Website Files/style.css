@@ -37,6 +37,37 @@ main {
     box-sizing: border-box;
 }
 
+/* hide the nav items by default on mobile. */
+.nav-items {
+    display: flex;
+    gap: 1.5rem;
+}
+
+@media (max-width: 768px) {
+    .nav-items {
+        display:none; /* Hide the nav items. */
+        flex-direction: column; /* Stack the nav items vertically. */
+        position: absolute;
+        top: 80px; /* Below the navbar. */
+        left: 0;
+        width: 100%;
+        background-color: #383838; /* Match the navbar background. */
+        padding: 10px;
+    }
+
+    /* Style the hamburger icon. */
+    .hamburger {
+        display: block;
+        font-size: 30px;
+        cursor: pointer;
+    }
+}
+
+/* Show nav items when active. */
+.nav-items.active {
+    display: flex; /* Show the nav items when active. */
+}
+
 .hero-container {
     max-width: 1170px;
     margin: auto;

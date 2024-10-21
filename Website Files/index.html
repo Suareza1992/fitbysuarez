@@ -26,7 +26,18 @@
             <a href="blog.html">Blog</a>
         </div>
     </nav>
-    
+
+    <script>
+        // Get the hamburger button and the nav items
+        const hamburger = document.getElementById('hamburger');
+        const navItems = document.getElementById('nav-items');
+
+        // Add a click event listener to toggle the menu visibility
+        hamburger.addEventListener('click', function() {
+            navItems.classList.toggle('active'); // Add or remove the 'active' class
+        });
+    </script>
+
     <section class="hero">
         <div class="hero-container">
             <div class="column-left">
