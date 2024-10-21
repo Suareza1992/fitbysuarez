@@ -12,6 +12,9 @@
 html, body {
     height: 100%;
     margin: 0;
+    padding: 0;
+    width: 100%;
+    overflow-x: hidden; /* Prevents horizontal scrolling. */
     display: flex;
     flex-direction: column;
 }
@@ -76,50 +79,54 @@ main {
 .empieza-button::after {
     content: '';
     position: absolute;
-    width: 30px;
-    height: 10px;
-    background: rgba(255, 0, 0, 0.1); /* reduced opacity for a lighter red */
-    border-radius: 10px;
+    width: 0; /* Start with zero width. */
+    height: 100%; /* Full height of the button. */
+    background: rgba(255, 255, 255, 0.1); /* reduced opacity. */
+    transition: all 0.5s ease; /* Eases the transition. */
+    z-index: 0; /* Places behind the text. */
+    border-radius: 30px;
     transition: 0.5s;
-    opacity: 0; /* to make them invisible from the start */
-    pointer-events: none; /* Ensures they don't interfere with clicks */
+    opacity: 0; /* To make it invisible from the start. */
+    pointer-events: none; /* Ensures they don't interfere with clicks. */
 }
 
 .empieza-button::before {
-    top: -5px;
-    left: 50%;
-    transform: translateX(-50%);
+    /* top: -5px; */
+    left: 0;
+    /* transform: translateX(-50%); */
 }
 
 .empieza-button::after {
-    bottom: -8.5px;
-    left: 50%;
-    transform: translateX(-50%);
+    /* bottom: -8.5px; */
+    left: 0;
+    /* transform: translateX(-50%); */
 }
 
 /* On hover, pseudo elements become visible and animate */ 
 .empieza-button:hover::before,
 .empieza-button:hover::after {
-    opacity: 1; /* Make them visible */
+    width: 100%; /* Expand to full width on hover. */
+    opacity: 1; /* Makes it visible. */
 }
 
 .empieza-button:hover::before {
-    top: 0;
-    width: 80%;
-    height: 50%;
-    border-radius: 30px;
+    /* top: 0; */
+    /* width: 80%; */
+    /* height: 50%; */
+    /* border-radius: 30px; */
+    transform: none; /* Removes skews or transformations. */
 }
 
-.empieza-button:hover::after {
-    bottom: 0;
-    width: 80%;
-    height: 50%;
-    border-radius: 30px;
-}
+/* .empieza-button:hover::after { */
+    /* bottom: 0; */
+    /* width: 80%; */
+    /* height: 50%; */
+    /* border-radius: 30px;
+} */
 
 .empieza-button:nth-child(1)::before,
 .empieza-button:nth-child(1)::after {
-    background: rgba(255, 0, 0, 0.1); /* Lighter red */
+    background: rgba(255, 255, 255, 0.1); /* Lighter red */
     box-shadow: none;
 }
 
@@ -200,7 +207,7 @@ ul {
     bottom: -10px;
     height: 2px;
     width: 50px;
-    background-color: #f00; /* Added color for the underline */
+    /* background-color: #f00; /* Added color for the underline */
 }
 
 .footer-col ul li:not(:last-child) {
@@ -285,6 +292,14 @@ nav a {
 
 .fondo {
     background-image: url("herolandingFBS.png");
+    display:flex;
+    justify-content: center; /* Centers horizontally. */
+    align-items: center; /* Centers vertically. */
+    height: 100vh; /* Full vewport height. */
+    /* background-size: cover; */
+    background-position: center; /* Centers the background. */
+    background-repeat: no-repeat; /* Prevents background repetition. */
+    width: 100%; /* Ensure the container fits the viewport. */
 }
 
 /* Remove duplicate universal selector */
