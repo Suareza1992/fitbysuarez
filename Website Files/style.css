@@ -19,17 +19,26 @@ html, body {
     flex-direction: column;
 }
 
-body {
+/* Main content section to take remaining space between navbar and footer */
+.main-content {
+    flex: 1;
     display: flex;
-    flex-direction: column;
-    line-height: 1.5;
-    font-family: 'Poppins', sans-serif;
-    text-transform: none;
+    align-items: center; /* Center content vertically */
+    justify-content: center; /* Center content horizontally */
+    background-color: #383838; /* Match background color */
+    padding: 20px;
+    box-sizing: border-box;
 }
 
-/* Main content should grow to fill available space */
-main {
-    flex: 1;
+.hero-container {
+    max-width: 800px;
+    text-align: center;
+    color: #fff;
+    margin: auto;
+}
+
+.hero h1, .hero p {
+    margin-bottom: 20px; /* Add spacing between elements */
 }
 
 .nav-items:before,
@@ -43,11 +52,6 @@ main {
 .nav-items {
     display: flex;
     gap: 1.5rem;
-}
-
-.hero-container {
-    max-width: 1170px;
-    margin: auto;
 }
 
 .empieza-button {
@@ -205,6 +209,57 @@ nav a {
 }
 
 /* ================== Blog Section Styles ================== */
+
+.about-container {
+    display: flex;
+    align-items: center;
+    max-width: 100%;
+    padding: 20px;
+    background-color: #383838; /* Ensures background color is not white. */
+    color:#fff; /* Text color. */
+    border: none; /* Ensures no borders. */
+    outline: none; /* Removes any outline if any. */
+    margin-top: 80px; /* Adjust this value to match the navbar height. */
+    z-index: 0; /* Makes sure the container is under the footer. */
+}
+
+.about-image {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+}
+
+.about-image img {
+    width: 100%; /* Sets the image to take full width of it's container. */
+    max-width: 500px; /*  Sets a specific max width as needed for desired size. */
+    height: auto; /* Maintain aspect ratio */
+    border-radius: 8px; /* Optional: rounded corners */
+}
+
+.about-text {
+    flex: 2; /* Takes up the remaining space */
+    padding-left: 20px;
+}
+
+.about-text h1 {
+    margin-bottom: 20px; /* Space before each h1. */
+    margin-bottom: 10px; /* Space after each h1. */
+    font-size: 1.8em; /* Adjust title size. */
+    color: #fff; /* Make sure the text can be seen. */
+}
+
+.about-text p {
+    text-indent: 20px; /* Indents the paragraph. */
+    line-height: 1.6;
+    margin-bottom: 20px; /* Adds space between the paragraphs. */
+}
+
+.about-text h3 {
+    margin-top: 20px;
+    font-size: 1.4em;
+    color: #fff;
+}
+
 .blog {
     padding: 2rem;
 }
@@ -257,6 +312,7 @@ ul {
     text-align: center;
     width: 100%;
     position: relative; /* This keeps it within the flow of the document. */
+    z-index: 1; /* Makes sure the footer is above the page flow. */
     bottom: 0; /* Sticks to the bottom. */
 }
 
@@ -336,5 +392,18 @@ ul {
 @media (max-width: 574px) {
     .footer-col {
         width: 100%;
+    }
+}
+
+@media (max-width: 768px) {
+    .about-content {
+        flex-direction: column;
+        align-items: center; /* Center-align items horizontally */
+        text-align: center; /* Center-align text */
+    }
+
+    .about-image {
+        max-width: 80%; /* Slightly reduce width for smaller screens */
+        margin-bottom: 20px;
     }
 }
