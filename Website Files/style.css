@@ -50,8 +50,10 @@ html, body {
 
 /* Hide the nav items by default on mobile. */
 .nav-items {
-    display: flex;
-    gap: 1.5rem;
+    display: flex; /* Ensures items are laid out in a row. */
+    gap: 1.5rem; /* Adds consistent space between each item. */
+    align-items: center; /* Centers items vertically. */
+    flex-wrap: nowrap; /* Prevents items from stacking. */
 }
 
 .empieza-button {
@@ -159,7 +161,7 @@ html, body {
 
 @media (max-width: 768px) {
     .logo img {
-        width: 100px;  /* Smaller width for mobile devices */
+        width: 100px;  /* Smaller width for mobile devices. */
     }
 }
 
@@ -172,7 +174,7 @@ nav {
     background: #383838; /* Sets background color to avoid overlapping with content. */
     z-index: 1000; /* Ensures the navbar stays on top of other elements. */
     display: flex;
-    justify-content: space-between;
+    justify-content: space-between; /* Distributes space between logo and nav items. */
     align-items: center;
     padding: 10px 20px;
 }
@@ -182,7 +184,9 @@ nav a {
 
     text-decoration: none;
     color: white;
-    padding: 0 1.5rem;
+    padding: 0 1rem; /* Adjusts padding to make sure each item fits. */
+    font-size: 0.9rem; /* Reduces font size slightly if needed. */
+    white-space: nowrap; /* Ensures text doesn’t wrap to the next line. */
 }
 
 .hero {
@@ -529,5 +533,11 @@ p a {
     .about-image {
         max-width: 80%; /* Slightly reduce width for smaller screens */
         margin-bottom: 20px;
+    }
+}
+
+@media (max-width: 768px) {
+    .nav-items {
+        display: none;  /* Hide nav items for mobile, or add a hamburger menu */
     }
 }
