@@ -366,6 +366,68 @@ ul {
     list-style: none;
 }
 
+/* Form container styles */
+.form-container {
+    max-width: 400px;
+    margin: 100px auto;
+    padding: 20px;
+    background-color: #383838;
+    color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    text-align: center;
+}
+
+/* Form group styles */
+.form-group {
+    margin-bottom: 15px;
+    text-align: left;
+}
+
+/* Input and button styles */
+label {
+    font-size: 0.9rem;
+    margin-bottom: 5px;
+}
+
+input[type="text"],
+input[type="email"],
+input[type="password"] {
+    width: 100%;
+    padding: 10px;
+    margin-top: 5px;
+    margin-bottom: 10px;
+    border: none;
+    border-radius: 5px;
+    font-size: 1rem;
+}
+
+button {
+    width: 100%;
+    padding: 10px;
+    background-color: #fff;
+    color: #383838;
+    font-weight: bold;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+button:hover {
+    background-color: #ddd;
+}
+
+p {
+    font-size: 0.9rem;
+    margin-top: 15px;
+}
+
+p a {
+    color: #fff;
+    text-decoration: underline;
+}
+
 /* Footer should stay at the bottom */
 .footer {
     background-color: #383838;
