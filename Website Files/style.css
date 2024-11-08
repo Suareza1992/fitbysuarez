@@ -307,6 +307,7 @@ nav a {
 
 .blog-container {
     position: relative;
+    margin: 0 auto; /* Ensuring a match with the navbar height */
     display: flex;
     align-items: center;
     max-width: 100%;
@@ -388,7 +389,7 @@ body {
 /* Form container styles */
 
 .form-container {
-    position: relative;
+    position:relative;
     
     z-index: 10;
     padding: 20px;
