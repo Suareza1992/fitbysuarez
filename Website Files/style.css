@@ -260,8 +260,40 @@ nav a {
     color: #fff;
 }
 
-.blog {
-    padding: 2rem;
+.blog-container {
+    display: flex;
+    align-items: center;
+    max-width: 100%;
+    padding: 20px;
+    background-color: #383838; /* Ensures background color is not white. */
+    color:#fff; /* Text color. */
+    border: none; /* Ensures no borders. */
+    outline: none; /* Removes any outline if any. */
+    z-index: 0; /* Makes sure the container is under the footer. */
+}
+
+.blog-text {
+    flex: 2; /* Takes up the remaining space */
+    padding-left: 20px;
+}
+
+.blog-text h1 {
+    margin-bottom: 20px; /* Space before each h1. */
+    margin-bottom: 10px; /* Space after each h1. */
+    font-size: 1.8em; /* Adjust title size. */
+    color: #fff; /* Make sure the text can be seen. */
+}
+
+.blog-text p {
+    text-indent: 20px; /* Indents the paragraph. */
+    line-height: 1.6;
+    margin-bottom: 20px; /* Adds space between the paragraphs. */
+}
+
+.blog-text h3 {
+    margin-top: 20px;
+    font-size: 1.4em;
+    color: #fff;
 }
 
 .blog h1 {
