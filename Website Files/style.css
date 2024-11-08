@@ -260,6 +260,36 @@ nav a {
     color: #fff;
 }
 
+/* Style for programs buttons container. */
+
+.program-buttons {
+    display: flex;
+    flex-direction: column; /* Stacks buttons vertically. */
+    align-items: center; /* Centers buttons horizontally. */
+    gap: 20px; /* Space between buttons. */
+}
+
+/* Style for individual buttons */
+.program-button a {
+    display: block;
+    text-align: center;
+    width: 200px;
+    padding: 15px;
+    background: #fff;
+    color: #383838;
+    font-weight: 600;
+    text-decoration: none;
+    border-radius: 8px;
+    transition: background 0.3s, color 0.3s;
+}
+
+.program-button a:hover {
+    background: #383838;
+    color: #fff;
+}
+
+/* Style for blog. */
+
 .blog-container {
     display: flex;
     align-items: center;
