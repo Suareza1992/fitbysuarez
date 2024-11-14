@@ -1,0 +1,763 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: 'Poppins', sans-serif;
+    text-transform: none;
+}
+
+/* Ensure html and body take full height */
+
+html, body {
+    height: 100%;
+    margin: 0;
+    width: 100%;
+    overflow-x: hidden; /* Prevents horizontal scrolling. */
+    display: flex;
+    flex-direction: column;
+}
+
+/* Main content section to take remaining space between navbar and footer */
+
+.main-content {
+    flex: 1;
+    display: flex;
+    align-items: center; /* Center content vertically */
+    justify-content: center; /* Center content horizontally */
+    background-color: #383838; /* Match background color */
+    padding-top: 80px;
+    box-sizing: border-box;
+}
+
+.hero-container {
+    max-width: 800px;
+    text-align: center;
+    color: #fff;
+    margin: auto;
+}
+
+.hero h1, .hero p {
+    margin-bottom: 20px; /* Add spacing between elements. */
+}
+
+.nav-items:before,
+.nav-items:after {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+/* Hide the nav items by default on mobile. */
+
+.nav-items {
+    display: flex; /* Ensures items are laid out in a row. */
+    gap: 1.5rem; /* Adds consistent space between each item. */
+    align-items: center; /* Centers items vertically. */
+    flex-wrap: nowrap; /* Prevents items from stacking. */
+}
+
+.empieza-button {
+    display: flex;                   /* Use flexbox for alignment */
+    justify-content: center;         /* Center horizontally */
+    align-items: center;             /* Center vertically */
+    width: 20%;                      /* Responsive width */
+    max-width: 200px;                /* Maximum width to prevent it from getting too big */
+    padding: 1em;                    /* Responsive padding */
+    margin: 20px auto;               /* Center the button and add some vertical spacing */
+    background: rgba(255, 255, 255, 0.5);
+    border-top: 0.5px solid rgba(255, 255, 255, 0.1);
+    border-bottom: 0.5px solid rgba(255, 255, 255, 0.1);
+    box-shadow: 0 15px 15px rgba(255, 255, 255, 0.3);
+    border-radius: 30px;
+    backdrop-filter: blur(15px);
+    overflow: hidden;
+    position: relative;
+    transition: 0.5s;
+}
+
+.empieza-button a {
+    text-decoration: none;
+    font-size: 1rem;                 /* Use relative units for font size */
+    font-weight: 500;
+    letter-spacing: 1px;
+    color: #000;
+    transition: 0.5s;
+}
+
+.empieza-button:hover a {
+    letter-spacing: 2px;
+}
+
+/* Adjusted pseudo-elements are invisible by default */
+
+.empieza-button::before,
+.empieza-button::after {
+    content: '';
+    position: absolute;
+    width: 0; /* Start with zero width. */
+    height: 100%; /* Full height of the button. */
+    background: rgba(255, 255, 255, 0.1); /* reduced opacity. */
+    transition: all 0.5s ease; /* Eases the transition. */
+    z-index: 0; /* Places behind the text. */
+    border-radius: 30px;
+    transition: 0.5s;
+    opacity: 0; /* To make it invisible from the start. */
+    pointer-events: none; /* Ensures they don't interfere with clicks. */
+}
+
+.empieza-button::before {
+    /* top: -5px; */
+    left: 0;
+    /* transform: translateX(-50%); */
+}
+
+.empieza-button::after {
+    /* bottom: -8.5px; */
+    left: 0;
+    /* transform: translateX(-50%); */
+}
+
+/* On hover, pseudo elements become visible and animate */ 
+
+.empieza-button:hover::before,
+.empieza-button:hover::after {
+    width: 100%; /* Expand to full width on hover. */
+    opacity: 1; /* Makes it visible. */
+}
+
+.empieza-button:hover::before {
+    /* top: 0; */
+    /* width: 80%; */
+    /* height: 50%; */
+    /* border-radius: 30px; */
+    transform: none; /* Removes skews or transformations. */
+}
+
+/* .empieza-button:hover::after { */
+    /* bottom: 0; */
+    /* width: 80%; */
+    /* height: 50%; */
+    /* border-radius: 30px;
+} */
+
+.empieza-button:nth-child(1)::before,
+.empieza-button:nth-child(1)::after {
+    background: rgba(255, 255, 255, 0.1); /* Lighter red */
+    box-shadow: none;
+}
+
+/* Further adjust button width for very small screens */
+
+.empieza-button {
+    width: 80%;
+}
+
+.logo {
+    position: relative;
+    z-index: 1;
+    max-width: 100%;
+    padding: 10px;
+    display: flex; /* Aligns the image and text horizontally. */
+    pointer-events: none; /* Disables click events. */
+}
+
+.logo img {
+    max-width: 100%;
+    max-height: 100%;
+}
+
+@media (max-width: 768px) {
+    .logo img {
+        width: 100px;  /* Smaller width for mobile devices. */
+    }
+}
+
+nav {
+    position: fixed; /* makes the header stick to the top. */
+    top: 0; /* Sticks to the top of the page. */
+    left: 0; /* Sticks to the left side. */
+    width: 100%; /* Ensures it covers the full width of the page. */
+    height: 80px;
+    background: #383838; /* Sets background color to avoid overlapping with content. */
+    z-index: 1000; /* Ensures the navbar stays on top of other elements. */
+    display: flex;
+    justify-content: space-between; /* Distributes space between logo and nav items. */
+    align-items: center;
+    padding: 10px 20px;
+}
+
+nav a {
+    text-decoration: none;
+    color: white;
+    padding: 0 1rem; /* Adjusts padding to make sure each item fits. */
+    font-size: 0.9rem; /* Reduces font size slightly if needed. */
+    white-space: nowrap; /* Ensures text doesn’t wrap to the next line. */
+}
+
+.hero {
+    margin-top: 80px; /* Adjusts according to the nav height. */
+    background: #383838;
+}
+
+.fondo {
+    background-image: url("herolandingFBS.png");
+    display:flex;
+    justify-content: center; /* Centers horizontally. */
+    align-items: center; /* Centers vertically. */
+    height: 100vh; /* Full vewport height. */
+    /* background-size: cover; */
+    background-position: center; /* Centers the background. */
+    background-repeat: no-repeat; /* Prevents background repetition. */
+    width: 100%; /* Ensure the container fits the viewport. */
+}
+
+/* Remove duplicate universal selector */
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+/* ================== Blog Section Styles ================== */
+
+.about-container {
+    display: flex;
+    align-items: center;
+    max-width: 100%;
+    padding: 20px;
+    background-color: #383838; /* Ensures background color is not white. */
+    color:#fff; /* Text color. */
+    border: none; /* Ensures no borders. */
+    outline: none; /* Removes any outline if any. */
+    margin-top: 80px; /* Adjust this value to match the navbar height. */
+    z-index: 0; /* Makes sure the container is under the footer. */
+}
+
+.about-image {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+}
+
+.about-image img {
+    width: 100%; /* Sets the image to take full width of it's container. */
+    max-width: 500px; /*  Sets a specific max width as needed for desired size. */
+    height: auto; /* Maintain aspect ratio */
+    border-radius: 8px; /* Optional: rounded corners */
+}
+
+.about-text {
+    margin-top: 20px; /* Ensuring a match with the navbar height */
+    flex: 2; /* Takes up the remaining space */
+    padding-left: 20px;
+}
+
+.about-text h1 {
+    margin-bottom: 20px; /* Space before each h1. */
+    margin-bottom: 10px; /* Space after each h1. */
+    font-size: 1.8em; /* Adjust title size. */
+    color: #fff; /* Make sure the text can be seen. */
+}
+
+.about-text p {
+    text-indent: 20px; /* Indents the paragraph. */
+    line-height: 1.6;
+    margin-bottom: 20px; /* Adds space between the paragraphs. */
+}
+
+.about-text h3 {
+    margin-top: 20px;
+    font-size: 1.4em;
+    color: #fff;
+}
+
+/* Style for programs buttons container. */
+
+/* .program-buttons { */
+/*    display: flex; */
+/*    flex-direction: column; /* Stacks buttons vertically. */
+/*    align-items: center; /* Centers buttons horizontally. */
+/*    gap: 20px; /* Space between buttons. */
+/* } */
+
+/* Style for individual buttons */
+
+/* .program-button a {
+    display: block;
+    text-align: center;
+    width: 200px;
+    padding: 15px;
+    background: #fff;
+    color: #383838;
+    font-weight: 600;
+    text-decoration: none;
+    border-radius: 8px;
+    transition: background 0.3s, color 0.3s;
+}
+
+.program-button a:hover {
+    background: #383838;
+    color: #fff;
+}
+
+/* Style for blog. */
+
+.blog-container {
+    position: relative;
+    margin: 0 auto; /* Ensuring a match with the navbar height */
+    display: flex;
+    align-items: center;
+    max-width: 100%;
+    padding-top: 20px;
+    background-color: #383838; /* Ensures background color is not white. */
+    color:#fff; /* Text color. */
+    border: none; /* Ensures no borders. */
+    outline: none; /* Removes any outline if any. */
+    z-index: 0; /* Makes sure the container is under the footer. */
+}
+
+.blog-page .main-content {
+    padding-top: 10px; /* Adjust to match the navbar */
+}
+
+.blog-text {
+    padding-left: 20px;
+}
+
+.blog-container h1 {
+    margin-top: 80px;
+    margin-bottom: 20px; /* Space before each h1. */
+    font-size: 2em; /* Adjust title size. */
+    color: #fff; /* Make sure the text can be seen. */
+}
+
+.blog-container p {
+    text-indent: 20px; /* Indents the paragraph. */
+    line-height: 1.6;
+    margin-bottom: 20px; /* Adds space between the paragraphs. */
+}
+
+.blog-container h3 {
+    margin-top: 20px;
+    font-size: 1.4em;
+    margin-bottom: 10px;
+    color: #fff;
+}
+
+.blog-container ul, .blog-container ol {
+    margin-left: 20px;
+}
+
+/* Styling for blog post actions */
+.post-actions {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    margin-top: 20px;
+}
+
+.post-actions button {
+    background-color: #383838;
+    color: #fff;
+    border: none;
+    padding: 10px 15px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.post-actions button:hover {
+    background-color: #5a5a5a;
+}
+
+.post-actions .social-share {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.post-actions .social-share a {
+    color: #fff;
+    font-size: 1.2em;
+    transition: color 0.3s;
+}
+
+.post-actions .social-share a:hover {
+    color: #007BFF;
+}
+
+/* Styling for Comments Section */
+.comments-section {
+    margin-top: 30px;
+    background-color: #383838;
+    padding: 20px;
+    border-radius: 8px;
+    color: #fff;
+}
+
+.comments-section h2 {
+    font-size: 1.5em;
+    margin-bottom: 15px;
+}
+
+.comment-form {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin-bottom: 20px;
+}
+
+.comment-form textarea {
+    width: 100%;
+    padding: 10px;
+    resize: vertical;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    font-size: 1em;
+}
+
+.comment-form button {
+    align-self: flex-end;
+    padding: 8px 15px;
+    background-color: #fff;
+    color: #383838;
+    font-weight: bold;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.comment-form button:hover {
+    background-color: #ddd;
+}
+
+/* Individual comment styling */
+.comment {
+    background-color: #4a4a4a;
+    padding: 10px;
+    border-radius: 5px;
+    margin-bottom: 10px;
+}
+
+.comment p {
+    margin: 0;
+    font-size: 1em;
+}
+
+.comment-time {
+    display: block;
+    font-size: 0.8em;
+    color: #ccc;
+    margin-top: 5px;
+}
+
+
+/* Footer style. */
+
+.row {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+ul {
+    list-style: none;
+}
+
+/* Sign in container styles */
+
+.signin-container {
+    background-color: #383838;
+    color: #fff;
+    max-width: 400px;
+    width: 100%;
+    padding: 20px;
+    border-radius: 8px;
+    /* box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Optional shadow for depth */
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Centers content within the form */
+    justify-content: center; /* Centers horizontally */
+    min-height: 100vh;
+    font-family: 'Poppins', sans-serif;
+}
+
+/* Form container styles */
+
+.form-container {
+    position:relative;
+    
+    z-index: 10;
+    padding: 20px;
+    width: 100%;
+    max-width: 400px;
+    margin: 80px auto; /* Centers the form. */
+    padding: 20px;
+    background-color: #383838;
+    color: #fff;
+    border-radius: 8px;
+    text-align: center;
+}
+
+/* Form group styles */
+
+.form-group {
+    margin-bottom: 15px;
+    text-align: left;
+}
+
+/* Input and button styles */
+
+label {
+    font-size: 0.9rem;
+    margin-bottom: 5px;
+}
+
+input[type="text"],
+input[type="email"],
+input[type="password"] {
+    width: 100%;
+    padding: 10px;
+    margin: 10px 0;
+    box-sizing: border-box;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    background-color: #fff;
+    font-size: 1rem;
+}
+
+button {
+    width: 100%;
+    padding: 10px;
+    background-color: #fff;
+    color: #383838;
+    font-weight: bold;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+button:hover {
+    background-color: #ddd;
+}
+
+p {
+    font-size: 0.9rem;
+    margin-top: 15px;
+}
+
+p a {
+    color: #fff;
+    text-decoration: underline;
+}
+
+/* Footer should stay at the bottom */
+
+.footer {
+    background-color: #383838;
+    padding: 20px 15px; /* Adjust padding as needed */
+    color: white;
+    text-align: center;
+    width: 100%;
+    position: relative; /* This keeps it within the flow of the document. */
+    z-index: 1; /* Makes sure the footer is above the page flow. */
+    bottom: 0; /* Sticks to the bottom. */
+}
+
+.footer-col-l {
+    width: 25%;
+}
+
+.footer-col-l h4 {
+    font-size: 20px;
+    color: #fff;
+    text-transform: none;
+    margin-bottom: 35px;
+    font-weight: 500;
+    position: relative;
+}
+
+.footer-col-l h4::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: -10px;
+    height: 2px;
+    width: 50px;
+    /* background-color: #f00; /* Added color for the underline */
+}
+
+.footer-col-l ul li:not(:last-child) {
+    margin-bottom: 10px;
+}
+
+.footer-col-l ul li a {
+    font-size: 15px;
+    color: #fff;
+    text-decoration: none;
+    font-weight: 300;
+    display: block;
+    transition: all 0.3s ease;
+}
+
+.footer-col-l ul li a:hover {
+    color: #fff;
+    padding-left: 10px;
+    text-decoration: underline;
+}
+
+.footer-col-r {
+    width: 25%;
+    position: absolute;
+    top: auto;
+    right: 15px;
+
+}
+
+.footer-col-r h4 {
+    font-size: 20px;
+    color: #fff;
+    text-transform: none;
+    margin-bottom: 35px;
+    font-weight: 500;
+    position: relative;
+}
+
+.footer-col-r .social-links a {
+    display: inline-block;
+    height: 40px;
+    width: 40px;
+    background-color: rgba(255, 255, 255, 0.2);
+    margin: 0 10px 10px 0;
+    text-align: center;
+    line-height: 40px;
+    border-radius: 50%;
+    color: #fff;
+    transition: all 0.5s ease;
+}
+
+.footer-col-r .social-links a:hover {
+    color: #24262b;
+    background-color: #fff;
+}
+
+.row-bottom {
+    display: flex;
+    flex-wrap: wrap;
+    width: 100%;
+}
+
+.footer-col-c {
+    height: min-content;
+    text-align: center;
+    margin: auto;
+    margin: 0 10px 10px 0;
+
+}
+
+.legales {
+    margin: auto;
+    display: inline-block;
+    text-align: center;
+    margin: 0 10px 10px 0;
+
+}
+
+.footer-col-c h4 {
+    font-size: 10px;
+    color: #fff;
+    text-transform: none;
+    margin-bottom: 35px;
+    font-weight: 25;
+    position: relative;
+}
+
+.footer-col-c h4::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: -10px;
+    height: 2px;
+    width: 50px;
+}
+
+.footer-col-c a {
+    font-size: 15px;
+    color: #fff;
+    text-decoration: none;
+    font-weight: 300;
+    display: block;
+    transition: all 0.3s ease;
+}
+
+.footer-col-c a:hover {
+    color: #fff;
+    padding-left: 10px;
+    text-decoration: underline;
+}
+
+/* .footer-col-c h3 {
+    color: #fff;
+    pointer-events: none;
+    font-size: 15px;
+} */
+
+.footer-col-c {
+    width: auto;
+    display: inline-block;
+    position: relative;
+    bottom: 0;
+    text-align: center;
+    justify-content: center; /* Centers horizontally */
+    width: 100%;
+    padding: 10px auto;
+}
+
+/* Responsive adjustments */
+
+@media (max-width: 767px) {
+    .footer-col-r {
+        width: 50%;
+        margin-bottom: 30px;
+    }
+
+    /* Adjust button width for smaller screens */
+
+    .empieza-button {
+        width: 50%;
+    }
+}
+
+@media (max-width: 574px) {
+    .footer-col-l {
+        width: 100%;
+    }
+}
+
+@media (max-width: 574px) {
+    .footer-col-r {
+        width: 100%;
+    }
+}
+
+@media (max-width: 768px) {
+    .about-content {
+        flex-direction: column;
+        align-items: center; /* Center-align items horizontally */
+        text-align: center; /* Center-align text */
+    }
+
+    .about-image {
+        max-width: 80%; /* Slightly reduce width for smaller screens */
+        margin-bottom: 20px;
+    }
+}
+
+@media (max-width: 768px) {
+    .nav-items {
+        display: none;  /* Hide nav items for mobile, or add a hamburger menu */
+    }
+}
