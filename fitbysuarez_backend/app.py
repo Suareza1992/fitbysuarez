@@ -1,5 +1,5 @@
 from flask import Flask, render_template #type: ignore
-#from flask_sqlalchemy import SQLAlchemy
+# from flask_sqlalchemy import SQLAlchemy
 # from templates.auth import auth_blueprint #type: ignore
 # from templates.views import views_blueprint #type: ignore
 import os

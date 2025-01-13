@@ -17,7 +17,6 @@ html, body {
     overflow-x: hidden; /* Prevents horizontal scrolling. */
     display: flex;
     flex-direction: column;
-    padding-top: 80px;
 }
 
 /* Main content section to take remaining space between navbar and footer */
@@ -28,7 +27,7 @@ html, body {
     align-items: center; /* Center content vertically */
     justify-content: center; /* Center content horizontally */
     background-color: #383838; /* Match background color */
-    padding: 20px;
+    padding-top: 80px;
     box-sizing: border-box;
 }
 
@@ -250,7 +249,7 @@ nav a {
 }
 
 .about-text {
-    margin-top: 80px; /* Ensuring a match with the navbar height */
+    margin-top: 20px; /* Ensuring a match with the navbar height */
     flex: 2; /* Takes up the remaining space */
     padding-left: 20px;
 }
@@ -276,16 +275,16 @@ nav a {
 
 /* Style for programs buttons container. */
 
-.program-buttons {
-    display: flex;
-    flex-direction: column; /* Stacks buttons vertically. */
-    align-items: center; /* Centers buttons horizontally. */
-    gap: 20px; /* Space between buttons. */
-}
+/* .program-buttons { */
+/*    display: flex; */
+/*    flex-direction: column; /* Stacks buttons vertically. */
+/*    align-items: center; /* Centers buttons horizontally. */
+/*    gap: 20px; /* Space between buttons. */
+/* } */
 
 /* Style for individual buttons */
 
-.program-button a {
+/* .program-button a {
     display: block;
     text-align: center;
     width: 200px;
@@ -311,7 +310,7 @@ nav a {
     display: flex;
     align-items: center;
     max-width: 100%;
-    padding-top: 80px;
+    padding-top: 20px;
     background-color: #383838; /* Ensures background color is not white. */
     color:#fff; /* Text color. */
     border: none; /* Ensures no borders. */
@@ -320,15 +319,15 @@ nav a {
 }
 
 .blog-page .main-content {
-    padding-top: 80px; /* Adjust to match the navbar */
+    padding-top: 10px; /* Adjust to match the navbar */
 }
 
 .blog-text {
-    flex: 2; /* Takes up the remaining space */
     padding-left: 20px;
 }
 
 .blog-container h1 {
+    margin-top: 80px;
     margin-bottom: 20px; /* Space before each h1. */
     font-size: 2em; /* Adjust title size. */
     color: #fff; /* Make sure the text can be seen. */
@@ -351,6 +350,113 @@ nav a {
     margin-left: 20px;
 }
 
+/* Styling for blog post actions */
+.post-actions {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    margin-top: 20px;
+}
+
+.post-actions button {
+    background-color: #383838;
+    color: #fff;
+    border: none;
+    padding: 10px 15px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.post-actions button:hover {
+    background-color: #5a5a5a;
+}
+
+.post-actions .social-share {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.post-actions .social-share a {
+    color: #fff;
+    font-size: 1.2em;
+    transition: color 0.3s;
+}
+
+.post-actions .social-share a:hover {
+    color: #007BFF;
+}
+
+/* Styling for Comments Section */
+.comments-section {
+    margin-top: 30px;
+    background-color: #383838;
+    padding: 20px;
+    border-radius: 8px;
+    color: #fff;
+}
+
+.comments-section h2 {
+    font-size: 1.5em;
+    margin-bottom: 15px;
+}
+
+.comment-form {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin-bottom: 20px;
+}
+
+.comment-form textarea {
+    width: 100%;
+    padding: 10px;
+    resize: vertical;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    font-size: 1em;
+}
+
+.comment-form button {
+    align-self: flex-end;
+    padding: 8px 15px;
+    background-color: #fff;
+    color: #383838;
+    font-weight: bold;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.comment-form button:hover {
+    background-color: #ddd;
+}
+
+/* Individual comment styling */
+.comment {
+    background-color: #4a4a4a;
+    padding: 10px;
+    border-radius: 5px;
+    margin-bottom: 10px;
+}
+
+.comment p {
+    margin: 0;
+    font-size: 1em;
+}
+
+.comment-time {
+    display: block;
+    font-size: 0.8em;
+    color: #ccc;
+    margin-top: 5px;
+}
+
+
+/* Footer style. */
+
 .row {
     display: flex;
     flex-wrap: wrap;
@@ -361,17 +467,6 @@ ul {
 }
 
 /* Sign in container styles */
-
-body {
-    display: flex;
-    align-items: center; /* Centers vertically */
-    justify-content: center; /* Centers horizontally */
-    min-height: 100vh;
-    margin: 0;
-    padding: 0;
-    background-color: #383838;
-    font-family: 'Poppins', sans-serif;
-}
 
 .signin-container {
     background-color: #383838;
@@ -384,6 +479,9 @@ body {
     display: flex;
     flex-direction: column;
     align-items: center; /* Centers content within the form */
+    justify-content: center; /* Centers horizontally */
+    min-height: 100vh;
+    font-family: 'Poppins', sans-serif;
 }
 
 /* Form container styles */
@@ -460,7 +558,7 @@ p a {
 
 .footer {
     background-color: #383838;
-    padding: 20px 0; /* Adjust padding as needed */
+    padding: 20px 15px; /* Adjust padding as needed */
     color: white;
     text-align: center;
     width: 100%;
@@ -469,12 +567,11 @@ p a {
     bottom: 0; /* Sticks to the bottom. */
 }
 
-.footer-col {
+.footer-col-l {
     width: 25%;
-    padding: 0 15px;
 }
 
-.footer-col h4 {
+.footer-col-l h4 {
     font-size: 20px;
     color: #fff;
     text-transform: none;
@@ -483,7 +580,7 @@ p a {
     position: relative;
 }
 
-.footer-col h4::before {
+.footer-col-l h4::before {
     content: '';
     position: absolute;
     left: 0;
@@ -493,11 +590,11 @@ p a {
     /* background-color: #f00; /* Added color for the underline */
 }
 
-.footer-col ul li:not(:last-child) {
+.footer-col-l ul li:not(:last-child) {
     margin-bottom: 10px;
 }
 
-.footer-col ul li a {
+.footer-col-l ul li a {
     font-size: 15px;
     color: #fff;
     text-decoration: none;
@@ -506,12 +603,30 @@ p a {
     transition: all 0.3s ease;
 }
 
-.footer-col ul li a:hover {
+.footer-col-l ul li a:hover {
     color: #fff;
     padding-left: 10px;
+    text-decoration: underline;
 }
 
-.footer-col .social-links a {
+.footer-col-r {
+    width: 25%;
+    position: absolute;
+    top: auto;
+    right: 15px;
+
+}
+
+.footer-col-r h4 {
+    font-size: 20px;
+    color: #fff;
+    text-transform: none;
+    margin-bottom: 35px;
+    font-weight: 500;
+    position: relative;
+}
+
+.footer-col-r .social-links a {
     display: inline-block;
     height: 40px;
     width: 40px;
@@ -524,15 +639,87 @@ p a {
     transition: all 0.5s ease;
 }
 
-.footer-col .social-links a:hover {
+.footer-col-r .social-links a:hover {
     color: #24262b;
     background-color: #fff;
+}
+
+.row-bottom {
+    display: flex;
+    flex-wrap: wrap;
+    width: 100%;
+}
+
+.footer-col-c {
+    height: min-content;
+    text-align: center;
+    margin: auto;
+    margin: 0 10px 10px 0;
+
+}
+
+.legales {
+    margin: auto;
+    display: inline-block;
+    text-align: center;
+    margin: 0 10px 10px 0;
+
+}
+
+.footer-col-c h4 {
+    font-size: 10px;
+    color: #fff;
+    text-transform: none;
+    margin-bottom: 35px;
+    font-weight: 25;
+    position: relative;
+}
+
+.footer-col-c h4::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: -10px;
+    height: 2px;
+    width: 50px;
+}
+
+.footer-col-c a {
+    font-size: 15px;
+    color: #fff;
+    text-decoration: none;
+    font-weight: 300;
+    display: block;
+    transition: all 0.3s ease;
+}
+
+.footer-col-c a:hover {
+    color: #fff;
+    padding-left: 10px;
+    text-decoration: underline;
+}
+
+/* .footer-col-c h3 {
+    color: #fff;
+    pointer-events: none;
+    font-size: 15px;
+} */
+
+.footer-col-c {
+    width: auto;
+    display: inline-block;
+    position: relative;
+    bottom: 0;
+    text-align: center;
+    justify-content: center; /* Centers horizontally */
+    width: 100%;
+    padding: 10px auto;
 }
 
 /* Responsive adjustments */
 
 @media (max-width: 767px) {
-    .footer-col {
+    .footer-col-r {
         width: 50%;
         margin-bottom: 30px;
     }
@@ -545,7 +732,13 @@ p a {
 }
 
 @media (max-width: 574px) {
-    .footer-col {
+    .footer-col-l {
+        width: 100%;
+    }
+}
+
+@media (max-width: 574px) {
+    .footer-col-r {
         width: 100%;
     }
 }

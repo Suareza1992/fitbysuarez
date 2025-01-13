@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fit by Suárez | Ángel Suárez</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">    
+        
+    <!-- External Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    
+    <!-- JavaScript -->
+    <script src="script.js" defer></script>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <h1>Website Title</h1>
+            <nav>
+                <ul>
+                    <li><a href="#section1">Inicio</a></li>
+                    <li><a href="#section2">Sobre Mi</a></li>
+                    <li><a href="#section3">Programas de entrenamiento</a></li>
+                    <li><a href="#section4">Blog</a></li>
+                    <li><a href="#section5">Mi cuenta</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+    
+    <main>
+        <section id="section1">
+            <h2>Welcome</h2>
+            <p>This is the main section of the website.</p>
+        </section>
+        
+        <section id="section2">
+            <h2>About</h2>
+            <article>
+                <h3>Our Mission</h3>
+                <p>We aim to provide the best service possible.</p>
+            </article>
+            <article>
+                <h3>Our History</h3>
+                <p>Our story began many years ago...</p>
+            </article>
+        </section>
+        
+        <section id="section3">
+            <h2>Services</h2>
+            <article>
+                <h3>Service 1</h3>
+                <p>Description of Service 1.</p>
+            </article>
+            <article>
+                <h3>Service 2</h3>
+                <p>Description of Service 2.</p>
+            </article>
+        </section>
+        
+        <aside>
+            <h2>Quick Links</h2>
+            <ul>
+                <li><a href="#">Link 1</a></li>
+                <li><a href="#">Link 2</a></li>
+                <li><a href="#">Link 3</a></li>
+            </ul>
+        </aside>
+        
+        <section id="section4">
+            <h2>Contact</h2>
+            <form action="/submit" method="POST">
+                <label for="name">Name:</label>
+                <input type="text" id="name" name="name" required>
+                
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email" required>
+                
+                <label for="message">Message:</label>
+                <textarea id="message" name="message" rows="4" required></textarea>
+                
+                <button type="submit">Submit</button>
+            </form>
+        </section>
+    </main>
+    
+    <footer>
+        <div class="container">
+            <p>© 2024 FitbySuárez Todos los derechos son reservados.</p>
+            <ul>
+                <li><a href="#">Política de privacidad</a></li>
+                <li><a href="#">Términos y condiciones</a></li>
+            </ul>
+        </div>
+    </footer>
+</body>
+</html>

@@ -3,32 +3,29 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Fit by Suárez | Ángel Suárez</title>
+    <title>Blog Post | Fit by Suárez</title>
     <link rel="stylesheet" href="style.css">
-    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
 </head>
 <body class="blog-page">
     <nav>
-        <div class="logo img">
-            <img src="https://github.com/Suareza1992/fitbysuarez/blob/main/Logos/fitbysuarezlogowhite.png?raw=true" style="width: 600px; height: 300px;">
+        <div class="logo">
+            <img src="https://github.com/Suareza1992/fitbysuarez/blob/main/Logos/fitbysuarezlogowhite.png?raw=true" alt="Fit by Suárez Logo">
         </div>
+
+        <!-- Navigation items -->
         <div class="nav-items">
             <a href="index.html">Inicio</a>
             <a href="aboutme.html">Sobre mi</a>
-            <a href="programas.html">Programas de entrenamiento</a>
+            <!-- <a href="programas.html">Programas de entrenamiento</a> -->
             <a href="blog.html">Blog</a>
             <a href="iniciarsesion.html">Mi cuenta</a>
         </div>
     </nav>
-    
-    <section class="hero">
-        <div class="hero-container">
-            <div class="column-left">
-            </div>
-        </div>
-    </section>
 
+    <!-- Main Content Section that takes the full available height between navbar and footer. -->
     <!-- Blog Post Section -->
+
     <section class="blog-post">
         <div class="blog-container">
             <div class="blog-text">
@@ -136,22 +133,55 @@
                     enfocados en los glúteos, prestando atención a la técnica y la progresión, es la clave para maximizar la activación 
                     de GMax y alcanzar tus objetivos de acondicionamiento físico.</p>
             </div>
+
+            <!-- Like, Dislike, and Share buttons -->
+            <div class="post-actions">
+                <button class="like-btn"><i class="fas fa-thumbs-up"></i> Me gusta</button>
+                <button class="dislike-btn"><i class="fas fa-thumbs-down"></i> No me gusta</button>
+                <div class="social-share">
+                    <span>Compartir:</span>
+                    <a href="#"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#"><i class="fab fa-twitter"></i></a>
+                    <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                </div>
+            </div>
+
+            <!-- Comments Section -->
+            <div class="comments-section">
+                <h2>Comentarios</h2>
+                
+                <!-- Comment Form -->
+                <form class="comment-form" action="#" method="post">
+                    <textarea name="comment" placeholder="Añadir un comentario" required></textarea>
+                    <button type="submit">Publicar comentario</button>
+                </form>
+
+                <!-- List of Comments -->
+                <div class="comment">
+                    <p><strong>Usuario 1:</strong> ¡Gran artículo! Gracias por la información.</p>
+                    <span class="comment-time">Hace 2 horas</span>
+                </div>
+                <div class="comment">
+                    <p><strong>Usuario 2:</strong> Muy útil. Estoy deseando probar estos ejercicios.</p>
+                    <span class="comment-time">Hace 1 día</span>
+                </div>
+                <!-- Additional comments can be added here -->
+            </div>
         </div>
     </section>
 
     <footer class="footer">
-        <div class="footer-container">
+        <div class="footer-container-top">
             <div class="row">
-                <div class="footer-col">
+                <div class="footer-col-l">
                     <h4>Servicio al cliente</h4>
                     <ul>
                         <li><a href="#">Preguntas frecuentes</a></li>
-                        <li><a href="#">Opciones de pago</a></li>
+                        <!-- <li><a href="#">Opciones de pago</a></li> -->
                         <li><a href="#">Contáctanos</a></li>
-                        <li><a href="#">Términos y condiciones</a></li>
                     </ul>
                 </div>
-                <div class="footer-col">
+                <div class="footer-col-r">
                     <h4>¡Sígueme!</h4>
                     <div class="social-links">
                         <a href="#"><i class="fab fa-facebook-f"></i></a>
@@ -160,6 +190,16 @@
                         <a href="https://www.threads.net/@fitbysuarez"><i class="fab fa-threads"></i></a>
                         <a href="https://www.youtube.com/channel/UC6PdDO00SdHrGOWDZQ_3sCA"><i class="fab fa-youtube"></i></a>
                     </div>
+                </div>
+            </div>
+        </div>
+        <div class="footer-container-bottom">
+            <div class="row-bottom">
+                <div class="footer-col-c">
+                    <h4>© 2024 FitbySuárez Todos los derechos son reservados.</h4>
+                        <div class="legales">
+                            <a href="#">Política de privacidad</a><a href="#">Términos y condiciones</a>
+                        </div>
                 </div>
             </div>
         </div>
