@@ -306,6 +306,8 @@ nav a {
 
 .blog-image {
     z-index: 3;
+    align-items: center;
+    padding-top: 90px;
 }
 
 .blog-container {
