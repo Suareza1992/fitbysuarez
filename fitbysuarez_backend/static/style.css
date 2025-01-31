@@ -308,6 +308,9 @@ nav a {
     z-index: 3;
     align-items: center;
     padding-top: 90px;
+    display: block;
+    width: 100%;
+    max-width: 800px;
 }
 
 .blog-container {
