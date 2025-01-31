@@ -304,13 +304,55 @@ nav a {
 
 /* Style for blog. */
 
-.blog-image {
-    z-index: 3;
+.blog-header {
+    margin: 0 auto; /* Center of it. */
+    background-color: #383838;
     align-items: center;
-    padding-top: 90px;
-    display: block;
-    width: 100%;
-    max-width: 800px;
+    width: 100%; /* Fills full screen. */
+    max-width: 800px; /* Matching with the rest of the blog */
+    z-index: 3;
+    position: relative;
+    text-align: center; /* Centers my text. */
+    overflow: hidden; /* Ensures no overflow. */
+    display: flex; /* Enables flexbox. */
+    flex-direction: column; /* Centers the text. */
+    padding: 20px 0; /* Adds spacing above and below. */
+}
+
+.blog-header h1 {
+    margin: 80px 0 10px 0;
+    font-size: 2em; /* Adjust title size. */
+    color: #fff; /* Make sure the text can be seen. */
+    display: flex;
+}
+
+.blog-header h3 {
+    font-size: 1.2em;
+    color: #fff;
+    font-weight: normal;
+    display: flex;
+}
+
+.blog-image {
+    z-index: 2;
+    justify-content: center; /* Centers image horizontally. */
+    align-items: center;
+    position: relative;
+    padding-top: 80px;
+    display: flex;
+    width: 90%;
+    max-width: 750px;
+    height: auto;
+    margin: auto; /* Spaces above the image */
+    border-radius: 8px;
+    background-color: #383838;
+    /* filter: brightness(0.9); /* Darkens image for better text contrast. */
+}
+
+.blog-image img {
+    width: 100%; /* Ensures the image stretches within it's container. */
+    height: auto; /* Keeps aspect ratio. */
+    border-radius: 8px;
 }
 
 .blog-container {
@@ -318,11 +360,11 @@ nav a {
     margin: 0 auto; /* Ensuring a match with the navbar height */
     display: flex;
     align-items: center;
-    max-width: 100%;
-    padding-top: 20px;
+    max-width: 800px; /* Testing readability. */
+    padding: 20px;
     background-color: #383838; /* Ensures background color is not white. */
     color:#fff; /* Text color. */
-    border: none; /* Ensures no borders. */
+    border-radius: 8px; /* Ensures no borders. */
     outline: none; /* Removes any outline if any. */
     z-index: 0; /* Makes sure the container is under the footer. */
 }
@@ -726,6 +768,21 @@ p a {
 }
 
 /* Responsive adjustments */
+
+@media (max-width: 1024px) {
+    .blog-container {
+        max-width: 90%;
+    }
+    .blog-image {
+        width: 100%;
+    }
+}
+
+@media (max-width: 768px) {
+    .blog-container {
+        max-width: 95%;
+    }
+}
 
 @media (max-width: 767px) {
     .footer-col-r {
