@@ -369,6 +369,27 @@ nav a {
     z-index: 0; /* Makes sure the container is under the footer. */
 }
 
+.blog-container .blog-image-2 {
+    justify-content: center; /* Centers image horizontally. */
+    align-items: center;
+    position: relative;
+    display: flex;
+    width: 90%;
+    max-width: 750px;
+    margin: 20px auto; /* Spaces above the image */
+    border-radius: 8px;
+    background-color: #383838;
+}
+
+.blog-container .blog-image-2 img {
+    width: 100%; /* Ensures the image stretches within it's container. */
+    max-width: 100%; /* Matching the blog-image. */
+    height: auto;
+    border-radius: 8px;
+    display: block;
+    margin: auto; /* Centers the image. */
+}
+
 .blog-page .main-content {
     padding-top: 10px; /* Adjust to match the navbar */
 }
