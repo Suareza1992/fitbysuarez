@@ -309,7 +309,7 @@ nav a {
     background-color: #383838;
     align-items: center;
     width: 100%; /* Fills full screen. */
-    max-width: 800px; /* Matching with the rest of the blog */
+    max-width: 750px; /* Matching with the rest of the blog */
     z-index: 3;
     position: relative;
     text-align: center; /* Centers my text. */
@@ -338,7 +338,7 @@ nav a {
     justify-content: center; /* Centers image horizontally. */
     align-items: center;
     position: relative;
-    padding-top: 80px;
+    padding-top: 10px;
     display: flex;
     width: 90%;
     max-width: 750px;
@@ -360,34 +360,13 @@ nav a {
     margin: 0 auto; /* Ensuring a match with the navbar height */
     display: flex;
     align-items: center;
-    max-width: 800px; /* Testing readability. */
+    max-width: 750px; /* Testing readability. */
     padding: 20px;
     background-color: #383838; /* Ensures background color is not white. */
     color:#fff; /* Text color. */
     border-radius: 8px; /* Ensures no borders. */
     outline: none; /* Removes any outline if any. */
     z-index: 0; /* Makes sure the container is under the footer. */
-}
-
-.blog-container .blog-image-2 {
-    justify-content: center; /* Centers image horizontally. */
-    align-items: center;
-    position: relative;
-    display: flex;
-    width: 90%;
-    max-width: 750px;
-    margin: 20px auto; /* Spaces above the image */
-    border-radius: 8px;
-    background-color: #383838;
-}
-
-.blog-container .blog-image-2 img {
-    width: 100%; /* Ensures the image stretches within it's container. */
-    max-width: 100%; /* Matching the blog-image. */
-    height: auto;
-    border-radius: 8px;
-    display: block;
-    margin: auto; /* Centers the image. */
 }
 
 .blog-page .main-content {
@@ -420,6 +399,22 @@ nav a {
 
 .blog-container ul, .blog-container ol {
     margin-left: 20px;
+}
+
+.blog-image-2 {
+    width: 100%; /* Makes the container take the full width. */
+    max-width: 750px; /* Prevents the image from being too large. */
+    margin: 20px auto; /* Adds space above and below and centers the image. */
+    overflow: hidden; /* Ensures no overflow if the image is larger. */
+}
+
+.blog-image-2 img {
+    width: 100%; /* Makes the image responsive */
+    height: 100%; /* Keeps aspect ratio */
+    max-width: unset; /* Removes any max width restriction */
+    max-height: unset; /* Removes any max height restriction */
+    display: block; /* Ensures it behaves like a block element */
+    object-fit: cover; /* Ensures the image fills the container properly. */
 }
 
 /* Styling for blog post actions */
@@ -796,6 +791,13 @@ p a {
     }
     .blog-image {
         width: 100%;
+    }
+}
+
+@media (max-width: 768px) {
+    .blog-image-2 img {
+        width: 100%; /* Makes the image take full width on smaller screens */
+        max-width: 100%; /* Avoids unnecessary scaling */
     }
 }
 
