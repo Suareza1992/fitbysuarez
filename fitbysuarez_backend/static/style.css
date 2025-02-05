@@ -42,20 +42,36 @@ html, body {
     margin-bottom: 20px; /* Add spacing between elements. */
 }
 
-.nav-items:before,
-.nav-items:after {
-    padding: 0;
-    margin: 0;
-    box-sizing: border-box;
+.nav {
+    position: fixed; /* Sticks the Navbar to the top. */
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 80px;
+    background: #000; /* Black background. */
+    z-index: 1000; /* Ensures the navbar stays on top. */
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2); /* Shadow effect */
 }
 
-/* Hide the nav items by default on mobile. */
-
-.nav-items {
-    display: flex; /* Ensures items are laid out in a row. */
+.nav-items a {
+    text-decoration: none;
+    color: #fff;
+    font-size: 1rem;
+    font-weight: 500;
+    letter-spacing: 1px;
+    padding: 10px 15px;
+    transition: background 0.3s, transform 0.2s ease-in-out;
     gap: 1.5rem; /* Adds consistent space between each item. */
-    align-items: center; /* Centers items vertically. */
     flex-wrap: nowrap; /* Prevents items from stacking. */
+}
+
+.nav-items a:hover {
+    background: rgba(255, 255, 255, 0.1); /* Testing slight glow effect. */
+    transform: translateY(-2px); /* Adds a slight hover lift effect. */
 }
 
 .empieza-button {
@@ -160,12 +176,14 @@ html, body {
     max-width: 100%;
     padding: 10px;
     display: flex; /* Aligns the image and text horizontally. */
+    align-items: center;
+    justify-content: flex-start; /* Aligns to the left. */
     pointer-events: none; /* Disables click events. */
 }
 
 .logo img {
-    max-width: 100%;
-    max-height: 100%;
+    max-width: 750px;
+    max-height: auto;
 }
 
 @media (max-width: 768px) {
@@ -344,7 +362,6 @@ nav a {
     max-width: 750px;
     height: auto;
     margin: auto; /* Spaces above the image */
-    border-radius: 8px;
     background-color: #383838;
     /* filter: brightness(0.9); /* Darkens image for better text contrast. */
 }
@@ -352,7 +369,6 @@ nav a {
 .blog-image img {
     width: 100%; /* Ensures the image stretches within it's container. */
     height: auto; /* Keeps aspect ratio. */
-    border-radius: 8px;
 }
 
 .blog-container {
@@ -364,7 +380,6 @@ nav a {
     padding: 20px;
     background-color: #383838; /* Ensures background color is not white. */
     color:#fff; /* Text color. */
-    border-radius: 8px; /* Ensures no borders. */
     outline: none; /* Removes any outline if any. */
     z-index: 0; /* Makes sure the container is under the footer. */
 }
@@ -374,7 +389,8 @@ nav a {
 }
 
 .blog-text {
-    padding-left: 20px;
+    padding-left: 10px;
+    padding-right: 10px;
 }
 
 .blog-container h1 {
@@ -406,6 +422,8 @@ nav a {
     max-width: 750px; /* Prevents the image from being too large. */
     margin: 20px auto; /* Adds space above and below and centers the image. */
     overflow: hidden; /* Ensures no overflow if the image is larger. */
+    justify-content: center; /* Centers the image */
+
 }
 
 .blog-image-2 img {
